@@ -21,13 +21,12 @@
 
     <title>Weather Dashboard</title>
    
-
 </head>
 <body>
     <header>Weather Dashboard</header>
 
     <div class="row">
-        <div class="col-4">
+        <div class="col-3">
             <h5>Search for a City:</h5>
             <input class="cityInput"><button><i class="fas fa-search" id="search"></i></button>
             <div class="row cityBreak">
@@ -35,44 +34,17 @@
             </div>
         </div>
 
-        <div class="col-8">
-            <div class="cityInfoDiv">
-                <!-- <h2 class="row cityInfoLines" id="cityndate"></h2>
-                <div class="row cityInfoLines" id="temp">Temperature: </div>
-                <div class="row cityInfoLines" id="humid">Humidity: </div>
-                <div class="row cityInfoLines" id="wind">Wind Speed: </div>
-                <div class="row cityInfoLines" id="uv">UV Index: </div> -->
-            </div>
-            <div class="row forecast"> 
-                <h4>5-Day Forecast:</h4>
-                <div class="buttons-view">
-                    buttons will render here
-
-                </div> 
+        <div class="col-9">
+            <div class="cityInfoDiv"> </div>
+            <div class="forecastDIV"> 
+                <h4 class="row forecastHeader"></h4>
+                <div class="row buttons-view"></div> 
             </div>
         </div>
-
     </div>
-
-
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="Assets/script.js"></script>
 </body>
 </html>
-
-<!-- 
-weather, forecast, uvi
-
-uv index - have to supply coordinates, which are supplied in the forecast api ("city": {"coord"})
-load forecast first, parse that object, and pass it into the uv api to get coordinates in order to show uv
-
-store searched cities into local storage as an array; grab last item from array (most recent item searched for) to show on reload
-
-Use the [OpenWeather API](https://openweathermap.org/api)
-    - http://api.openweathermap.org/data/2.5/weather
-    - http://api.openweathermap.org/data/2.5/forecast
-    - http://api.openweathermap.org/data/2.5/uvi
-    
--->

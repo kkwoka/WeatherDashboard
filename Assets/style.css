@@ -1,19 +1,17 @@
 header {
-    background-image: url("Images/cloudy-day.png");
     padding: 10px;
     font-size: 32px;
     font-weight: bold;
     text-align: center;
 }
 
-.col-4 {
-    background-color: lightgrey;
-    height: 100%;
-    padding-bottom: 50px;
+body {
+    background-image: url("Images/cloudy-day.png");
 }
 
-.col-8 {
-    background-color: white;
+.col-3 {
+    height: 100%;
+    padding-bottom: 50px;
 }
 
 .cityBreak {
@@ -48,14 +46,14 @@ h5{
 li {
     border-bottom: 1px solid black;
     padding: 10px;
-
 }
 
 .cityInfoDiv {
-    border: 1px solid grey;
     margin-top: 10px;
     line-height: 3;
     padding-left: 10px;
+    border: solid grey;
+    margin-right: 20px;
 }
 
 .cityInfoLines {
@@ -78,4 +76,25 @@ li {
 
 .redUV {
     background-color: red;
+}
+
+.foreButton {
+    background-color: blue;
+    color: white;
+    width: 200px;
+    margin: 15px;
+}
+
+.foreList {
+    list-style-type: none;
+    border: none;
+    text-align: center;
+}
+
+.foreIMG {
+    margin-left: 75px;
+}
+
+.forecastHeader {
+    margin: 10px;
 }
