@@ -28,14 +28,14 @@ $(document).ready(function() {
         ul.append(li);
         $(".cityList").prepend(ul);
         localStorage.getItem("cityArr", cityArr);
-        getWeather();
+        // getWeather();
 
     })
     
 
     function getWeather() {
         var cityName = $(this).text();
-        var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "," + "us&apikey=6e7d39e5118ef7d51cd1eac47a719b4b";
+        var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "," + "us&apikey=6e7d39e5118ef7d51cd1eac47a719b4b";
 
         $.ajax({
             url: queryURL,
@@ -45,7 +45,7 @@ $(document).ready(function() {
                 $(".forecast").text("");
                 $(".buttons-view").text("");
                 
-                var img = "<img src='http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png' >"
+                var img = "<img src='https://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png' >"
                 var cityHeader = $("<h2>").text(response.city.name + " (" + moment().format('L') + ")");
                 var tempConversion = (((response.list[0].main.temp - 273.15) * 1.80) + 32).toFixed(1);
                 var tempDiv = $("<div>").text("Temperature: " + tempConversion + " F°");
@@ -61,7 +61,7 @@ $(document).ready(function() {
                 $(".cityInfoDiv").append(windDiv); 
                                
 
-                queryURL = "http://api.openweathermap.org/data/2.5/uvi?appid=6e7d39e5118ef7d51cd1eac47a719b4b&lat" + "=" + lat + "&lon" + "=" + lon;
+                queryURL = "https://api.openweathermap.org/data/2.5/uvi?appid=6e7d39e5118ef7d51cd1eac47a719b4b&lat" + "=" + lat + "&lon" + "=" + lon;
 
                 $.ajax({
                     url: queryURL,
@@ -79,13 +79,11 @@ $(document).ready(function() {
                         $(".cityInfoDiv").append(uvDiv);
 
                         uvDiv.append(uvNumber);
-
-
                   })
             }) 
             
         var cityName = $(this).text();
-        var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "," + "us&apikey=6e7d39e5118ef7d51cd1eac47a719b4b";
+        var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "," + "us&apikey=6e7d39e5118ef7d51cd1eac47a719b4b";
 
         $.ajax({
             url: queryURL,
@@ -96,8 +94,7 @@ $(document).ready(function() {
                     if (response.list[i].dt_txt.indexOf("09:00:00") > -1) {
                         var buttonDIV = $("<div>").attr("class", "foreButton");
                         var date = $("<li>").attr("class", "foreList");
-                        var img = "<img class='foreIMG' src='http://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png' >"
-                        // $(img).attr("class", "foreIMG");
+                        var img = "<img class='foreIMG' src='https://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png' >"
                         var temp = $("<li>").attr("class", "foreList");
                         var humid = $("<li>").attr("class", "foreList");
                         date.text(" " + moment(response.list[i].dt, "X").format("MM/DD/YYYY"));
