@@ -20,6 +20,119 @@
     />
 
     <title>Weather Dashboard</title>
+
+    <style>
+        @media screen and (max-width: 915px) {
+            h5 {
+                margin-left: 20px;
+                text-align: center;
+            }
+            .cityInput {
+                width: 150px;
+                margin-top: 5px;
+            }
+            #searchButton {
+                width: 100px;
+                margin-left: 45px;
+                margin-top: 5px;
+            }
+            .cityBreak {
+                width: 200px;
+            }
+            li {
+                text-align: center;
+            }
+         }
+
+         @media screen and (max-width: 783px) {
+             h5 {
+                 text-align: center;
+             }
+             li {
+                text-align: center;
+            }
+         }
+
+         @media screen and (max-width: 765px) {
+            h5 {
+                margin-top: 20px;
+                margin-left: 300px;
+                width: 150px;
+                font-size: 25px;
+            }
+            .cityInput {
+                width: 150px;
+                margin-top: 5px;
+                margin-left: 300px;
+            }
+            #searchButton {
+                width: 100px;
+                margin-left: 45px;
+                margin-top: 5px;
+                margin-left: 325px;
+            }
+            .cityBreak {
+                width: 200px;
+                margin-left: 265px;
+            }
+            .col-3 {
+                justify-content: center;
+            }
+            .col-9 {
+                margin-left: 15px;
+            }
+            li {
+                text-align: center;
+            }
+            .cityInfoDiv {
+                text-align: center;
+                margin-left: 100px;
+                margin-right: 0px;
+                width: 100%;
+            }
+            .forecastHeader {
+                margin-left: 275px;
+            }
+            .buttons-view {
+                margin-left: 140px; 
+                width: 100%;
+            }
+            h2 {
+                font-size: 25px;
+            }
+            .foreButton {
+                margin: 6px;
+            }
+         }
+         @media screen and (max-width: 593px) {
+            h5 {
+                text-align: center;
+                margin-left: 225px;
+            }
+            .cityInput {
+                width: 150px;
+                margin-top: 5px;
+                margin-left: 225px;
+            }
+            #searchButton {
+                width: 100px;
+                margin-left: 45px;
+                margin-top: 5px;
+                margin-left: 250px;
+            }
+            .cityBreak {
+                width: 200px;
+                margin-left: 190px;
+            }
+            h4 {
+                font-size: 25px;
+                margin-left: -50px;
+            }
+            .foreButton {
+                margin-left: 75px;
+            }
+        }
+    </style>
    
 </head>
 <body>
@@ -28,7 +141,7 @@
     <div class="row">
         <div class="col-3">
             <h5>Search for a City:</h5>
-            <input class="cityInput"><button><i class="fas fa-search" id="search"></i></button>
+            <input class="cityInput"><button id="searchButton"><i class="fas fa-search" id="search"></i></button>
             <div class="row cityBreak">
                 <div class="cityList"></div>
             </div>

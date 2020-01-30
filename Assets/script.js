@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    var i=0;
     var cityArr = [];
     var retrievedData = localStorage.getItem("cityArr");
 
@@ -29,6 +28,8 @@ $(document).ready(function() {
         ul.append(li);
         $(".cityList").prepend(ul);
         localStorage.getItem("cityArr", cityArr);
+        getWeather();
+
     })
     
 
@@ -47,9 +48,9 @@ $(document).ready(function() {
                 var img = "<img src='http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png' >"
                 var cityHeader = $("<h2>").text(response.city.name + " (" + moment().format('L') + ")");
                 var tempConversion = (((response.list[0].main.temp - 273.15) * 1.80) + 32).toFixed(1);
-                var tempDiv = $("<div>").text("Temperature: " + tempConversion + "F°");
+                var tempDiv = $("<div>").text("Temperature: " + tempConversion + " F°");
                 var humidDiv = $("<div>").text("Humidity: " + Math.floor(response.list[0].main.humidity) + "%");
-                var windDiv = $("<div>").text("Wind Speed: " + (response.list[0].wind.speed * 2.236936).toFixed(1) + "MPH");
+                var windDiv = $("<div>").text("Wind Speed: " + (response.list[0].wind.speed * 2.236936).toFixed(1) + " MPH");
                 var lat = response.city.coord.lat;
                 var lon = response.city.coord.lon;
                 
@@ -66,15 +67,20 @@ $(document).ready(function() {
                     url: queryURL,
                     method: "GET"
                   }).then(function(response) {
-                        var uvDiv = $("<div>").text("UV Index: " + (response.value).toFixed(2));
-                        $(".cityInfoDiv").append(uvDiv);
+                        var uvDiv = $("<div>").text("UV Index: ");
+                        var uvNumber = $("<label>").text((response.value).toFixed(2));
                         if (response.value < 3) {
-                            uvDiv.attr("class", "greenUV");
+                            uvNumber.attr("class", "greenUV");
                         } else if (response.value < 7 && response.value >= 3){
-                            uvDiv.attr("class", "yellowUV");
+                            uvNumber.attr("class", "yellowUV");
                         } else {
-                            uvDiv.attr("class", "redUV");
+                            uvNumber.attr("class", "redUV");
                         }
+                        $(".cityInfoDiv").append(uvDiv);
+
+                        uvDiv.append(uvNumber);
+
+
                   })
             }) 
             
@@ -95,7 +101,7 @@ $(document).ready(function() {
                         var temp = $("<li>").attr("class", "foreList");
                         var humid = $("<li>").attr("class", "foreList");
                         date.text(" " + moment(response.list[i].dt, "X").format("MM/DD/YYYY"));
-                        temp.text("Temp: " + (((response.list[i].main.temp  - 273.15) * 1.80) + 32).toFixed(2) + "F°");
+                        temp.text("Temp: " + (((response.list[i].main.temp  - 273.15) * 1.80) + 32).toFixed(2) + " F°");
                         humid.text("Humidity: " + response.list[i].main.humidity + "%");
 
                         $(buttonDIV).append(date);

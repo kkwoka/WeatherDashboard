@@ -19,7 +19,8 @@ body {
 }
 
 h5{
-    margin-left: 20px;
+    margin-left: 35px;
+    margin-bottom: 10px;
 }
 
 .cityInput {
@@ -68,14 +69,23 @@ li {
 
 .greenUV {
     background-color: green;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
 }
 
 .yellowUV {
     background-color: yellow;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
 }
 
 .redUV {
     background-color: red;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
 }
 
 .foreButton {
@@ -83,6 +93,7 @@ li {
     color: white;
     width: 200px;
     margin: 15px;
+    border-radius: 10px;
 }
 
 .foreList {
