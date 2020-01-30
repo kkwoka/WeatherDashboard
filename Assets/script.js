@@ -3,6 +3,8 @@ $(document).ready(function() {
     var retrievedData = localStorage.getItem("cityArr");
 
     $(document).on("click", ".listnone", getWeather);
+    // $(document).on("click", "#searchButton", getWeather);
+
 
     if (retrievedData !=null) {
         var cityArr2 = JSON.parse(retrievedData);
@@ -19,22 +21,28 @@ $(document).ready(function() {
     
 
     $("#search").click(function updateCityList() {
-        var currentCity = $(".cityInput").val();
-        var ul = $("<ul>").attr("class", "listnone");
-        var li = $("<li>");
-        cityArr.push(currentCity);
-        localStorage.setItem("cityArr", JSON.stringify(cityArr));
-        li.append(currentCity);
-        ul.append(li);
-        $(".cityList").prepend(ul);
-        localStorage.getItem("cityArr", cityArr);
+        var cityName = $(".cityInput").val();
+        if ($(".cityInput").val() != "") {
+            // getWeather(cityName);
+            var ul = $("<ul>").attr("class", "listnone");
+            var li = $("<li>");
+            cityArr.push(cityName);
+            localStorage.setItem("cityArr", JSON.stringify(cityArr));
+            li.append(cityName);
+            ul.append(li);
+            $(".cityList").prepend(ul);
+            localStorage.getItem("cityArr", cityArr);
+        }
+        else {
+            alert("Must enter a city name.")
+        }
         // getWeather();
 
     })
     
 
     function getWeather() {
-        var cityName = $(this).text();
+        cityName = $(this).text();
         var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "," + "us&apikey=6e7d39e5118ef7d51cd1eac47a719b4b";
 
         $.ajax({
