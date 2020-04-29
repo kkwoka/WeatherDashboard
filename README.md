@@ -4,25 +4,41 @@ This page will allow the user to search for a city within the United States. Onc
 ## Deployment Link
 https://kkwoka.github.io/WeatherDashboard/
 
-## Included Files
-* index.html
-* README.md
-* Assets/
-    * script.js
-    * style.css
-    * Assets/Images
-        * cloudy-day.png
-        * One.png
-        * Two.png
-        * Three.png
+## Table of Contents 
+* [Resources](#Resources)
+
+* [Files](#Files)
+​
+* [GIF](#GIF)
+​  ​
+* [Questions](#questions)
+
 
 ## Resources
-* Bootstrap
-* JQuery
-* FontAwesome
-* AJAX
+    * Bootstrap
+    * JQuery
+    * FontAwesome
+    * AJAX
 
-## Images of Working Password Generator
-![Image of WeatherDashboard1](./Assets/Images/One.png)
-![Image of WeatherDashboard2](./Assets/Images/Two.png)
-![Image of WeatherDashboard3](./Assets/Images/Three.png)
+## Files
+    * index.html
+    * README.md
+    * Assets/
+        * script.js
+        * style.css
+        * Assets/Images
+            * cloudy-day.png
+            * One.png
+            * Two.png
+            * Three.png
+
+## GIF
+![GIF](./Assets/Images/test3.gif)
+
+
+
+## Questions
+​
+<img src="https://avatars3.githubusercontent.com/u/57764303?v=4" alt="avatar" style="border-radius: 16px" width="30" />
+​
+If you have any questions about the repo, contact [kkwoka](https://github.com/kkwoka).
